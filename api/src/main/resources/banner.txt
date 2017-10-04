@@ -1,0 +1,2 @@
+
+DecisionWanted Domain API ${application.formatted-version}, Spring Boot ${spring-boot.formatted-version}

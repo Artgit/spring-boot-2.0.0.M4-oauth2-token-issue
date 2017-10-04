@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example </title>      
+   	</head>
+    <body>
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form th:action="@{/login}" method="post">
+        	<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <div><label> User Name : <input type="text" name="username"/> </label></div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+        
+        <br/><br/>
+        
+        <!-- GOOGLE SIGNIN -->
+		<form name="li_signin" id="li_signin" th:action="@{/signin/google}" method="POST">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+			<input type="hidden" name="scope" value="email https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/tasks https://www.googleapis.com/auth/latitude.all.best" />
+			<input type="hidden" name="access_type" value="offline"/>
+			<button type="submit">Sign In with Google</button>
+		</form>
+        
+		<!-- FACEBOOK SIGNIN -->
+		<form name="fb_signin" id="fb_signin" th:action="@{/signin/facebook}" method="POST">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+			<input type="hidden" name="scope" value="user_posts,user_photos"></input>
+			<button type="submit"><img th:src="@{/images/social/facebook/sign-in-with-facebook.png}"></img></button>
+		</form>
+		
+        <!-- TWITTER SIGNIN -->
+		<form id="tw_signin" th:action="@{/signin/twitter}" method="POST">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+			<button type="submit"><img th:src="@{/images/social/twitter/sign-in-with-twitter-d.png}"></img></button>
+		</form>
+	
+		<!-- LINKEDIN SIGNIN -->
+		<form name="li_signin" id="li_signin" th:action="@{/signin/linkedin}" method="POST">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+			<button type="submit">Sign In with LinkedIn</button>
+		</form>
+		
+		<!-- GITHUB SIGNIN -->
+		<form name="li_signin" id="li_signin" th:action="@{/signin/github}" method="POST">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+			<button type="submit">Sign In with GitHub</button>
+		</form>
+		
+    </body>
+</html>

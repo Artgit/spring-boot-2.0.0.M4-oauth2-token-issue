@@ -1,0 +1,26 @@
+{
+  "properties": [{
+      "name": "spring.social.google.app-id",
+      "type": "java.lang.String",
+      "description": "Application id.",
+      "sourceType": "org.springframework.boot.autoconfigure.social.GoogleProperties"
+    },
+    {
+      "name": "spring.social.google.app-secret",
+      "type": "java.lang.String",
+      "description": "Application secret.",
+      "sourceType": "org.springframework.boot.autoconfigure.social.GoogleProperties"
+    },
+    {
+      "name": "spring.social.github.app-id",
+      "type": "java.lang.String",
+      "description": "Application id.",
+      "sourceType": "org.springframework.boot.autoconfigure.social.GitHubProperties"
+    },
+    {
+      "name": "spring.social.github.app-secret",
+      "type": "java.lang.String",
+      "description": "Application secret.",
+      "sourceType": "org.springframework.boot.autoconfigure.social.GitHubProperties"
+    }]
+}
